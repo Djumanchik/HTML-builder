@@ -10,11 +10,11 @@ fs.readdir(
   (error, files) => {
     if (!error) {
       files.forEach((files) => {
+        let ext = '';
+        let name = '';
+        let size = '';
+        let result = '';
         if (files.isFile()) {
-          let ext = '';
-          let name = '';
-          let size = '';
-          let result = '';
           ext = path.extname(files.name)
           name = (files.name).slice(0, - (ext.length));
           fs.stat(`${dirPath}/${files.name}`, (error, stats) => {
