@@ -4,6 +4,10 @@ const http = require('http');
 
 const dirPath = path.join('/documents', '/coding', '/html-builder', '/06-build-page');
 
+fs.mkdir(`${dirPath}/project-dist`, { recursive: true }, (err) => {
+  if (err) throw err;
+});
+
 fs.mkdir(`${dirPath}/project-dist/assets/fonts`, { recursive: true }, (err) => {
   if (!err) {
     fs.readdir(
@@ -80,7 +84,6 @@ fs.readFile(`${dirPath}/template.html`, 'utf-8', (err, fileContent) => {
         fs.readFile(`${dirPath}/components/articles.html`, 'utf8', (errorArticles, fileContentArticles) => {
           if(errorArticles) throw errorArticles;
           fileContent = fileContent.replace(/\{\{articles\}\}/, fileContentArticles);
-          console.log(fileContent);
           fs.writeFile(`${dirPath}/project-dist/index.html`, fileContent, (err) => {
             if (err) throw err;
           });
