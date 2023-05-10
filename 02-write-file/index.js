@@ -4,7 +4,7 @@ const readline = require('readline');
 const process = require('process');
 
 const output = fs.createWriteStream(
-  path.join('/documents', '/coding', '/html-builder', '/02-write-file', '/text.txt')
+  path.join(__dirname, '/text.txt')
 );
 
 const rl = readline.createInterface({

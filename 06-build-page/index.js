@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 
-const dirPath = path.join('/documents', '/coding', '/html-builder', '/06-build-page');
+const dirPath = path.join(__dirname);
 
 fs.mkdir(`${dirPath}/project-dist`, { recursive: true }, (err) => {
   if (err) throw err;

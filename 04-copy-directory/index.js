@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const dirPath = path.join('/documents', '/coding', '/html-builder', '/04-copy-directory');
+const dirPath = path.join(__dirname);
 
 fs.mkdir(`${dirPath}/files-copy`, { recursive: true }, (err) => {
     if (err) {

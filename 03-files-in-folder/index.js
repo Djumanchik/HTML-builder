@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const process = require('process');
-const dirPath = path.join('/documents', '/coding', '/html-builder', '/03-files-in-folder', '/secret-folder');
+const dirPath = path.join(__dirname, '/secret-folder');
 const resultData = [];
 
 fs.readdir(
